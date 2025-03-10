@@ -1,356 +1,172 @@
+/* Reset and Base Styles */
 body {
-    font-family: sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-}
-
-h3 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-input[type="text"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 250px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#comparison {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-}
-
-#comparison p {
-    margin-bottom: 10px;
-}
-
-#comparison {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 10px;
-}
-
-#comparison p {
-    margin: 5px;
-}
-
-#comparison p:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-@media (max-width: 600px) {
-    input[type="text"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0; /* Remove default margin */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
     padding: 0;
-    background-image: url('/static/images/dee75195bd4edd55a879694d09443f13.jpg'); /* Replace with your image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keep background fixed while scrolling */
-    color: #adaaaa;
+    color: #e0e0e0; /* Light text for better contrast on dark background */
+    background-color: #898787; /* Darker background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+.a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+/* Background Image Fixed */
+body {
+    background-image: url('/static/images/919d254ff4d4c66d4d215b72c5e6e7db.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed */
+    height: 100vh; /* Ensures full viewport height */
+    overflow: auto; /* Allows content scrolling while background stays fixed */
+}
+
+/* Overlay to Improve Text Readability */
 body::before {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(41, 41, 41, 0.7); /* Adjust opacity as needed */
-    z-index: -1; /* Place behind content */
+    height: 100vh; /* Match viewport height */
+    background-color: rgba(169, 167, 167, 0.7); /* Darker overlay */
+    z-index: -1;
 }
 
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --text-color: #333;
-    --background-light: #f8f9fa;
-    --background-dark: #343a40;
-}
-
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --text-color: #333;
-    --background-light: #f8f9fa;
-    --background-dark: #343a40;
-}
-
-#comparison {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px auto;
-    max-width: 1200px;
-}
-
-.vehicle-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+/* Header Styles */
+header {
+    background-color: rgba(27, 26, 26, 0.721);
+     /* Slightly transparent white for a subtle header */
+     background-image: url('/static/images/text-1741589815206.jpg');
     padding: 20px;
-    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.84);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2em; /* Larger logo */
+    font-weight: 700;
     text-align: center;
-}
-
-.vehicle-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    background-color: #eee;
-    border-radius: 4px;
-    height: 10px;
-    margin: 10px 0;
     width: 100%;
+    color: #00bcd4; /* Accent color for logo */
 }
 
-.progress-fill {
-    background-color: var(--primary-color);
-    border-radius: 4px;
-    height: 10px;
+nav a {
+    margin-left: 20px;
+    color: #b0bec5; /* Muted color for navigation */
+    transition: color 0.3s ease;
 }
 
-button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+nav a:hover {
+    color: #00bcd4; /* Accent color on hover */
 }
 
-button:hover {
-    background-color: darken(var(--primary-color), 10%);
-}
-
-input[type="text"] {
-    padding: 12px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 300px;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus {
-    border-color: var(--primary-color);
-    outline: none;
-}
-
-@media (max-width: 768px) {
-    #comparison {
-        flex-direction: column;
-    }
-
-    .vehicle-card {
-        width: 90%;
-    }
-
-    input[type="text"] {
-        width: 90%;
-    }
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
+* Input Section Styles */
+#input-section {
+    text-align: center;
+    margin-top: 50px;
 }
 
 #input-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin: 20px auto; /* Add some margin */
-    gap: 10px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 input[type="text"] {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 250px;
-    transition: border-color 0.3s ease;
+    padding: 15px;
+    border: 2px solid #00bcd4; /* Vibrant border color */
+    border-radius: 8px;
+    width: 350px;
+    background-color: #263238; /* Darker background for contrast */
+    color: #e0e0e0;
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 input[type="text"]:focus {
-    border-color: var(--primary-color);
+    border-color: #0097a7; /* Darker accent color on focus */
+    background-color: #37474f; /* Slightly lighter background on focus */
     outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow on focus */
 }
 
-button {
-    padding: 12px 24px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Comparison Section Styles */
+#comparison-section {
+    margin-top: 50px;
 }
 
-button:hover {
-    background-color: darken(var(--primary-color), 10%);
+#comparison {
+    background-color: #263238; /* Darker background for comparison area */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    color: #e0e0e0;
 }
 
+#comparison h3 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #00bcd4;
+    font-size: 1.8em;
+}
+
+/* Comparison Table Styles */
 #specs-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-#specs-table th, #specs-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+#specs-table th,
+#specs-table td {
+    border: 1px solid #424242;
+    padding: 12px 15px;
     text-align: left;
 }
 
 #specs-table th {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
 }
 
 #specs-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Basic Reset and Variables */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-.a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
-}
-
-nav a {
-    margin-left: 20px;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #007bff;
-}
-
-/* Input Section */
-#input-section {
-    text-align: center;
-    margin-top: 40px;
-}
-
-#input-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-input[type="text"] {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    width: 300px;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-button {
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Comparison Section */
-#comparison-section {
-    margin-top: 40px;
-}
-
-#comparison {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#comparison h3 {
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0;
-    margin-top: 50px;
+    background-color: rgba(25, 24, 24, 0.813);
+    margin-top: auto;
+    color: #b0bec5;
+}
+
+/* About Section Container */
+#about-section {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    color: #1c1b1b; /* Text color */
+    padding: 20px; /* Add spacing inside the container */
+    border-radius: 10px; /* Rounded corners for a smooth look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 800px; /* Restrict width for better readability */
+    margin: 50px auto; /* Center the section on the page */
+    text-align: center; /* Center the text */
 }
 
 /* Responsive Design */
@@ -360,147 +176,8 @@ footer {
         align-items: center;
     }
 
-    input[type="text"], button {
+    input[type="text"],
+    button {
         width: 90%;
     }
-}
-
-/* Basic Reset and Variables */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
-    display: flex; /* Make body a flex container */
-    flex-direction: column; /* Stack children vertically */
-    min-height: 100vh; /* Ensure body takes full viewport height */
-}
-
-.a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    flex: 1; /* Allow container to grow and take remaining space */
-}
-
-/* Header */
-header {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
-}
-
-nav a {
-    margin-left: 20px;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #007bff;
-}
-
-/* Input Section */
-#input-section {
-    text-align: center;
-    margin-top: 40px;
-}
-
-#input-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-input[type="text"] {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    width: 300px;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-button {
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Comparison Section */
-#comparison-section {
-    margin-top: 40px;
-}
-
-#comparison {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#comparison h3 {
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-    margin-top: auto; /* Push footer to the bottom */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #input-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    input[type="text"], button {
-        width: 90%;
-    }
-}
-
-/* ... other styles ... */
-
-#about-section { /* Add this rule */
-    color: white;
-}
-
-/* ... other styles ... */
-
-/* ... other styles ... */
-
-.logo {
-    text-align: center;  /* Center the text within the div */
-    width: 100%;         /* Make the div span the full width of its container */
 }
